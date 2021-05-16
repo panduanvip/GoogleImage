@@ -16,14 +16,15 @@
         }
     ],
 
+
+    "require": {
+        "panduanvip/ronolo-json-extract": "^1.1"
+    },
+	
     "autoload": {
         "psr-4": {
             "PanduanVIP\\WebExtractor\\": "src/"
         }
-    },
-
-    "suggest": {
-        "panduanvip/ronolo-json-extract": "^1.1"
     }
     
 }
