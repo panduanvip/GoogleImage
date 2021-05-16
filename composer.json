@@ -16,7 +16,6 @@
         }
     ],
 
-
     "require": {
         "panduanvip/ronolo-json-extract": "^1.1"
     },
