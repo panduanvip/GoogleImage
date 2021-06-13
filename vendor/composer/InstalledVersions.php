@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'e7797224a16d15ef28a522fa43d763223f3ef0f1',
+    'reference' => '4daeebed6971bc02cb9b17d7745419fa160e1320',
     'name' => 'panduanvip/google-image',
   ),
   'versions' => 
@@ -44,7 +44,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'e7797224a16d15ef28a522fa43d763223f3ef0f1',
+      'reference' => '4daeebed6971bc02cb9b17d7745419fa160e1320',
     ),
     'panduanvip/ronolo-json-extract' => 
     array (

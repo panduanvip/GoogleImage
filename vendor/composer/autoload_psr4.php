@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'RoNoLo\\JsonExtractor\\' => array($vendorDir . '/panduanvip/ronolo-json-extract/src'),
     'PanduanVIP\\WebExtractor\\' => array($baseDir . '/src'),
 );

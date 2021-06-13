@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInitd88a7d9014b205f046b071fbacc830ac
 {
     public static $prefixLengthsPsr4 = array (
+        'R' => 
+        array (
+            'RoNoLo\\JsonExtractor\\' => 21,
+        ),
         'P' => 
         array (
             'PanduanVIP\\WebExtractor\\' => 24,
@@ -14,6 +18,10 @@ class ComposerStaticInitd88a7d9014b205f046b071fbacc830ac
     );
 
     public static $prefixDirsPsr4 = array (
+        'RoNoLo\\JsonExtractor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/panduanvip/ronolo-json-extract/src',
+        ),
         'PanduanVIP\\WebExtractor\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
@@ -22,7 +30,6 @@ class ComposerStaticInitd88a7d9014b205f046b071fbacc830ac
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'PanduanVIP\\WebExtractor\\GoogleImage' => __DIR__ . '/../..' . '/src/GoogleImage.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
