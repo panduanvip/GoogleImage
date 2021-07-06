@@ -4,8 +4,53 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2fd028bb76b3ae699ee01d3e0c5d472",
+    "content-hash": "445dfec2e2811aa402809d422a8edcd2",
     "packages": [
+        {
+            "name": "panduanvip/helpers",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/panduanvip/Helpers.git",
+                "reference": "3314cd74dbce9a096bae75594c944c426d01015f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/panduanvip/Helpers/zipball/3314cd74dbce9a096bae75594c944c426d01015f",
+                "reference": "3314cd74dbce9a096bae75594c944c426d01015f",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PanduanVIP\\Helpers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yoyon Sugiono",
+                    "email": "yoyonsugiono@gmail.com",
+                    "homepage": "https://panduan.vip",
+                    "role": "developer"
+                }
+            ],
+            "description": "Text or string manipulation",
+            "homepage": "https://panduan.dev/panduanvip-helpers",
+            "keywords": [
+                "Text Manipulation",
+                "php",
+                "string manipulation"
+            ],
+            "support": {
+                "issues": "https://github.com/panduanvip/Helpers/issues",
+                "source": "https://github.com/panduanvip/Helpers/tree/1.0.0"
+            },
+            "time": "2021-07-06T00:24:17+00:00"
+        },
         {
             "name": "panduanvip/ronolo-json-extract",
             "version": "1.2.1",
@@ -58,5 +103,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }

@@ -2,19 +2,29 @@
 
 namespace PanduanVIP\WebExtractor;
 
-use \RoNoLo\JsonExtractor\JsonExtractorService; 
+use PanduanVIP\Helpers\Please;
+use RoNoLo\JsonExtractor\JsonExtractorService;  
 
 class GoogleImage
 {
 
     public static function get($keyword, $proxy='')
     {
-		$html = self::curl($keyword, $proxy);
+        $keyword = str_replace(' ', '+', $keyword);
+		$url = "https://www.google.com/search?q=$keyword&source=lnms&tbm=isch&safe=strict&tbs=isz:l";
 
-		$jsonExtractor = new JsonExtractorService();
-		$data = $jsonExtractor->extractAllJsonData($html);
+		$userAgent = 'Mozilla/5.0 (Linux; Android 10; LM-Q720) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.72 Mobile Safari/537.36.';
+		
+		$html = Please::getWebContent($url, $proxy, $userAgent);
 
-		$results = [];
+        $results = [];
+
+        if(!empty($html)){
+		    $jsonExtractor = new JsonExtractorService();
+		    $data = $jsonExtractor->extractAllJsonData($html);
+        } else {
+            return $results;
+        }
 		
 		foreach($data as $index=>$dt){
 			$json = json_encode($dt);
@@ -49,37 +59,5 @@ class GoogleImage
 		
         return json_encode($results);
     }
-	
-	private static function curl($keyword, $proxy='')
-	{
-		if (!function_exists('curl_version')) {
-			die('cURL extension is disabled on your server!');
-		}
-
-		$keyword = str_replace(' ', '+', $keyword);
-		$url = "https://www.google.com/search?q=$keyword&source=lnms&tbm=isch&safe=strict&tbs=isz:l";
-
-		$user_agent = 'Mozilla/5.0 (Linux; Android 10; LM-Q720) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.72 Mobile Safari/537.36.';
-		
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, $url);	
-		curl_setopt($ch, CURLOPT_USERAGENT, $user_agent);
-		if (isset($_SERVER['HTTP_REFERER'])) {
-			curl_setopt($ch, CURLOPT_REFERER, $_SERVER['HTTP_REFERER']);
-		}
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_FRESH_CONNECT, true);
-		curl_setopt($ch, CURLOPT_HEADER, false);
-		curl_setopt($ch, CURLOPT_TIMEOUT, 60);
-		if (!empty($proxy)) {
-			curl_setopt($ch, CURLOPT_PROXY, $proxy);
-		}
-		$result = curl_exec($ch);
-		curl_close($ch);
-		return $result;
-	}
-  
+	 
 }
