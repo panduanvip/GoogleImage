@@ -19,12 +19,12 @@ class GoogleImage
 
         $results = [];
 
-        if(!empty($html)){
-		    $jsonExtractor = new JsonExtractorService();
-		    $data = $jsonExtractor->extractAllJsonData($html);
-        } else {
-            return $results;
+        if(empty($html)){
+            return json_encode($results);
         }
+
+        $jsonExtractor = new JsonExtractorService();
+        $data = $jsonExtractor->extractAllJsonData($html);
 		
 		foreach($data as $index=>$dt){
 			$json = json_encode($dt);
